@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{the_title}}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/file_6.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!--	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>-->
+ 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ url_for('static', filename='js/event.js') }}"></script>
+
+</head>
+<!--<body style="background-color:grey;">-->
+<body style="margin: 0;
+			background-image:url('./static/images/bn.jpg');
+			padding-right: 0px !important;
+    		overflow: hidden;
+">
+<div id = "container">
+	{% block body %}
+	{% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block body %}
+
+		<nav
+            id="topNav"
+            class="navbar navbar-default navbar-fixed-top bg-primary"
+        >
+            <span class="navbar-brand mx-auto"
+                >Real Time Facial Expression Detection</span
+            >
+        </nav>
+        <!-- Button trigger modal -->
+        <div class="row mt-4">
+            <div class="offset-1 col-md-2 text-center">
+                <img
+                    src="{{ url_for('static', filename='images/samsung.jpg') }}"
+                    class="img-fluid rounded img-thumbnail"
+                    alt="Responsive image"
+                />
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="modal"
+                    data-target="#video1"
+                >
+                    Play
+                </button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="offset-1 col-md-2 text-center">
+                <img
+                    src="{{ url_for('static', filename='images/iphone.jpg') }}"
+                    class="img-fluid rounded img-thumbnail"
+                    alt="Responsive image"
+                />
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="modal"
+                    data-target="#video2"
+                >
+                    Play
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="video1"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="modelTitleId"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-centered modal-lg ml-0"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <video id="video-1" width="100%" controls autoplay>
+                            <source src="{{ url_for('static', filename='images/samsung.mp4') }}" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="video2"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="modelTitleId"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-centered modal-lg ml-0"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <video id="video-2" width="100%" controls autoplay>
+                            <source src="{{ url_for('static', filename='images/iphone.mp4') }}" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="offset-1 col-md-2 text-center">
+                <a id="bg" href="{{ url_for('video_feed') }}" style="width:100%">
+                <button type="button" class="btn btn-success"data-toggle="modal"data-target="#video2">Open the webcam</button>
+            </a>
+            </div>
+        </div>
+
+{% endblock %}
+
